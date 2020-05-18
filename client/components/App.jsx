@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom'
 
 import { checkAuth } from '../actions/auth'
 import { logoutUser } from '../actions/auth'
+import { getEmail } from '../apis/subscribe'
+
 
 import Landing from './Landing'
 import Login from './Login'
@@ -12,11 +14,25 @@ import Register from './Register'
 import Navi from './Navi'
 import CreateProfile from './CreateProfile'
 import Profile from './Profile'
+import Lead from './Lead'
 
 export class App extends Component{
+  state = {
+    subscribes: ''
+  }
   componentDidMount() {
+    this.showSubscribes()
     const confirmSuccess = () => { }
     this.props.dispatch(checkAuth(confirmSuccess))
+  }
+
+  showSubscribes = () =>{
+    getEmail()
+    .then(emails =>{
+      this.setState({
+        subscribes: emails
+      })
+    })
   }
 
   logout = event => {
@@ -28,13 +44,13 @@ export class App extends Component{
     const {auth} = this.props
     return(
       <div className='wrapper'>
-        <h1>This is Lozi</h1>
         <Router>
           {!auth.isAuthenticated && 
             <>
             <Route exact path='/'>
-              <Navi/>
-              <Landing/>
+              {/* <Navi/>
+              <Landing/> */}
+              <Lead subscribes={this.state.subscribes} showSubscribes={this.showSubscribes}/>
             </Route>
             <Route path='/login' component={Login}/>
             <Route path='/register' component={Register}/>

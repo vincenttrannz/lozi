@@ -3,6 +3,7 @@ import {combineReducers} from 'redux'
 import auth from './auth'
 import users from './users'
 import profiles from './profiles'
+import subscribe from './subscribe'
 import waiting from './waiting'
 
 export default combineReducers({
@@ -10,5 +11,6 @@ export default combineReducers({
   auth,
   waiting,
   users,
-  profiles
+  profiles,
+  subscribe
 })

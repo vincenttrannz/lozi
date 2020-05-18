@@ -3,7 +3,6 @@ import {getProfiles} from '../apis/profiles'
 export const REQUEST = 'REQUEST'
 export const RECEIVE_PROFILES = 'RECEIVE_PROFILES'
 export const CREATE_PROFILE_FAILURE = 'CREATE_PROFILE_FAILURE'
-export const YOUR_PROFILE = 'YOUR_PROFILE'
 
 export const request = () => {
   return {
