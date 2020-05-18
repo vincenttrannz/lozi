@@ -1,8 +1,8 @@
 {
-  "name": "react-redux-boilerplate",
+  "name": "lozi-canada",
   "version": "0.1.0",
-  "description": "React, Redux, Dotenv template",
-  "repository": "https://github.com/vincenttrannz/react-redux-boilerplate",
+  "description": "Lozi Canada where people can share your food images and connect with the buyer",
+  "repository": "https://github.com/vincenttrannz/lozi",
   "main": "server/index.js",
   "scripts": {
     "dev": "run-p watch:client watch:server",
@@ -40,10 +40,11 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "jest": "^25.4.0",
     "nodemon": "^2.0.3",
-    "sqlite3": "^4.1.1",
+    "sqlite3": "^4.2.0",
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "authenticare": "^0.4.6",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.7.0",
     "express": "^4.17.1",
